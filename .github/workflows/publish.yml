@@ -25,10 +25,8 @@ jobs:
       - name: Build the package
         run: bun build src/index.ts --outdir dist --target bun --no-splitting --minify
 
-      - name: Set up npm
-        run: |
-          npm install -g npm
-          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc  # Authenticate to npm
+      - name: Authenticate to npm
+        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
 
       - name: Publish to npm
         run: npm publish --access public
