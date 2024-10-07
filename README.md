@@ -606,7 +606,7 @@ This project is licensed under the [MIT License](LICENSE).
 
 ## Contact
 
-For any questions, issues, or feature requests, please open an issue on [GitHub](https://github.com/your-username/drone-mobile-sdk/issues)
+For any questions, issues, or feature requests, please open an issue on [GitHub](https://github.com/jaredthejellyfish/drone-mobile-sdk/issues)
 
 ---
 
