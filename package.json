@@ -1,6 +1,6 @@
 {
   "name": "drone-mobile-sdk",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "An unofficial Node.js and TypeScript library for interacting with the DroneMobile API. Remotely control and monitor your vehicle with ease.",
   "keywords": [
     "drone-mobile",
