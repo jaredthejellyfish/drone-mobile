@@ -1,6 +1,6 @@
 {
   "name": "drone-mobile-sdk",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "An unofficial Node.js and TypeScript library for interacting with the DroneMobile API. Remotely control and monitor your vehicle with ease.",
   "keywords": [
     "drone-mobile",
@@ -9,13 +9,13 @@
     "aws",
     "bun"
   ],
-  "homepage": "https://github.com/jaredthejellyfish/drone-mobile#readme",
+  "homepage": "https://github.com/jaredthejellyfish/drone-mobile-sdk#readme",
   "bugs": {
-    "url": "https://github.com/jaredthejellyfish/drone-mobile/issues"
+    "url": "https://github.com/jaredthejellyfish/drone-mobile-sdk/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jaredthejellyfish/drone-mobile.git"
+    "url": "https://github.com/jaredthejellyfish/drone-mobile-sdk.git"
   },
   "license": "MIT",
   "author": "Jared Norton",
@@ -34,12 +34,13 @@
   },
   "dependencies": {
     "@aws-sdk/client-cognito-identity-provider": "^3.665.0",
+    "console-log-level": "^1.4.1",
     "dotenv": "^16.4.5",
-    "got": "^14.4.2",
-    "pino": "^9.4.0"
+    "got": "^14.4.2"
   },
   "devDependencies": {
     "@types/bun": "latest",
+    "@types/console-log-level": "^1.4.5",
     "typescript": "^5.0.0"
   }
 }

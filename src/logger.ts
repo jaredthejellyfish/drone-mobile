@@ -1,18 +1,7 @@
-import pino from 'pino';
+import createLogger, { LogLevelNames } from 'console-log-level';
 
-const isProduction = process.env.NODE_ENV === 'production';
-
-const logger = pino({
-  level: process.env.LOG_LEVEL || 'info',
-  ...(isProduction
-    ? {}
-    : {
-        prettyPrint: {
-          colorize: true,
-          translateTime: 'yyyy-mm-dd HH:MM:ss',
-          ignore: 'pid,hostname',
-        },
-      }),
+const logger = createLogger({
+  level: process.env.LOG_LEVEL as LogLevelNames || 'info', // Set the log level from environment variables
 });
 
 export default logger;
