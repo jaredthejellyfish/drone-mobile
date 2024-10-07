@@ -3,8 +3,8 @@ name: Build and Publish Package
 on:
   push:
     branches:
-      - main  # This will trigger the workflow when code is pushed to the main branch
-  workflow_dispatch:  # Allows you to manually trigger this workflow from the Actions tab
+      - main  # Trigger workflow on push to the main branch
+  workflow_dispatch:  # Allows manual triggering from the Actions tab
 
 jobs:
   build:
@@ -17,7 +17,7 @@ jobs:
       - name: Set up Bun
         uses: oven-sh/setup-bun@v1
         with:
-          bun-version: latest  # Specify Bun version
+          bun-version: latest
 
       - name: Install dependencies
         run: bun install
@@ -25,7 +25,12 @@ jobs:
       - name: Build the package
         run: bun build src/index.ts --outdir dist --target bun --no-splitting --minify
 
+      - name: Set up npm
+        run: |
+          npm install -g npm
+          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc  # Authenticate to npm
+
       - name: Publish to npm
-        run: bun publish --access public
+        run: npm publish --access public
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}  # Uses NPM token from GitHub secrets
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
