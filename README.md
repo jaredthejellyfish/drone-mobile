@@ -598,7 +598,7 @@ Contributions are welcome! Please follow these steps to contribute to the DroneM
 - **Testing**: Write tests for new features and ensure existing tests pass.
 - **Documentation**: Update the README and other documentation as needed.
 
-d## License
+## License
 
 This project is licensed under the [MIT License](LICENSE).
 
